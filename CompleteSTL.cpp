@@ -178,5 +178,199 @@ int main()
 	// size swap empty same as stack
 
     //Priority_queue
+    //PQ stores the inserted element in sorted order
+    cout<<"PQ"<<endl; 
+    priority_queue<int>pq;
+	pq.push(5); // {5}
+	pq.push(2); // {5, 2}
+	pq.push(8); // {8, 5, 2}
+	pq.emplace(10); // {10, 8, 5, 2}
+	cout << pq.top(); // prints 10
+	pq.pop(); // {8, 5, 2}
+	cout << pq.top(); // prints 8
+
+	// size swap empty function same as others
+
+    // Minimum Heap
+	priority_queue<int, vector<int>, greater<int>> pq1;
+	pq1.push(5); // {5}
+	pq1.push(2); // {2, 5}
+	pq1.push(8); // {2, 5, 8}
+	pq1.emplace(10); // {2, 5, 8, 10}
+
+	cout << pq1.top(); // prints 2
+    
+    //Set
+
+    //doesn't takes duplicate and inserts in sorted manne
+    //cout<<"Set"<<endl;
+    set<int>set;
+    set.insert(1);//{1}
+    set.emplace(2);//{1,2}
+    set.insert(2);//{1,2}
+    set.insert(4);//{1,2,4}
+    set.insert(3);//{1,2,3,4}
+    // Functionality of insert in vector
+	// can be used also, that only increases
+	// efficiency
+
+	// begin(), end(), rbegin(), rend(), size(),
+	// empty() and swap() are same as those of above
+    // {1, 2, 3, 4, 5}
+	auto ite = set.find(3);
+
+	// {1, 2, 3, 4, 5}
+	auto ite3 = set.find(6);
+
+	// {1, 4, 5}
+	set.erase(5); // erases 5 // takes logarithmic time
+
+
+	int cnt = set.count(1); 
+
+
+	auto ite6 = set.find(3);
+	set.erase(ite6); // it takes constant time
+
+	// {1, 2, 3, 4, 5}
+	auto ite1 = set.find(2);
+	auto ite2 = set.find(4);
+	set.erase(ite1, ite2); // after erase {1, 4, 5} [first, last)
+
+	// lower_bound() and upper_bound() function works in the same way
+	// as in vector it does.
+
+	// This is the syntax
+	auto ite4 = set.lower_bound(2); 
+
+	auto ite5 = set.upper_bound(3);
+
+    //MultiSet
+
+    //Everything same as set only stores duplicate element also
+
+	multiset<int>ms;
+	ms.insert(1); // {1}
+	ms.insert(1); // {1, 1}
+	ms.insert(1); // {1, 1, 1}
+
+	ms.erase(1); // all 1's erased
+
+	int cntms = ms.count(1); 
+
+	// only a single one erased
+	ms.erase(ms.find(1));
+
+
+	//ms.erase(ms.find(1)+2);
+
+	// rest all function same as set
+
+    //Map
+
+    cout<<"Map"<<endl;
+
+    // {key, value}
+	map<int, int> mpp;
+
+	map<int, pair<int, int>> mpp;
+
+	map< pair<int, int>, int> mpp;
+
+	// key values can be anything
+
+	mpp[1] = 2;
+	mpp.emplace({3, 1});
+
+	mpp.insert({2, 4});
+
+	mpp[{2,3}] = 10; 
+
+	{
+		{1, 2},
+		{2, 4},
+		{3, 1}
+	}
+
+	for(auto itmpp : mpp) {
+		cout << itmpp.first << " " << itmpp.second << endl; 
+	}
+
+	// same options for using iterators
+	// as we did in vector for the insert function
+
+
+	cout << mpp[1]; // prints 2
+	cout << mpp[5]; // prints 0, since it does not exists
+
+
+	auto itmpp1 = mpp.find(3); // points to the position where 3 is found
+	cout << *(itmpp1).second; 
+
+	auto itmpp2 = mpp.find(5); // points to the end of the map since 5 not there
+
+	// lower_bound and upper_bound works exactly in the 
+	// same way as explained in the other video 
+    
+    // This is the syntax
+	auto itmpp3 = mpp.lower_bound(2); 
+
+	auto itmpp4 = mpp.upper_bound(3); 
+
+	// erase, swap, size, empty, are same as above 
+
+    //MultiMap
+    	// everything same as map, only it can store multiple keys
+	// only mpp[key] cannot be used here 
+
+    //UnorderedMap
+    // same as set and unordered_Set difference. 
+
+    //EXTRAS
+
+    //sort
+    sort(a+2, a+4); // [first, last) //sorts between any range
+
+	sort(a, a+n, greater<int>); 
+    
+    pair<int,int> a[] = {{1,2}, {2, 1}, {4, 1}}; 
+
+    // sort it according to second element 
+    // if second element is same, then sort 
+    // it according to first element but in descending 
+    //     bool comp(pair<int,int>p1, pair<int,int>p2) {
+    // 	if(p1.second < p2.second) {
+    // 		return true; 
+    // 	} else if(p1.second == p2.second){
+    // 		if(p1.first>p2.second) return true; 
+    // 	}
+    // 	return false; 
+    // }
+	sort(a, a+n ,comp); 
+
+	// {4,1}, {2, 1}, {1, 2}}; 
+
+
+	int num = 7; // 111 
+	int cnt = __builtin_popcount(); 
+
+	long long num = 165786578687;
+	int cnt = __builtin_popcountll();
+
+
+	string s = "123"; 
+    //dictonary order
+	do {
+		cout << s << endl; 
+	} while(next_permutation(s.begin(), s.end())); 
+
+	// 123
+	// 132
+	// 213
+	// 231
+	// 312
+	// 321
+
+	int maxi = *max_element(a,a+n); //max el
     return 0;
 }
