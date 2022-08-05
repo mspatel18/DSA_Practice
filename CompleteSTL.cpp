@@ -62,7 +62,7 @@ int main()
     }
     cout << endl;
     // 3
-    for (auto it4 : v1)
+    for (auto it : v)
     {
         cout << it4 << " ";
     }
