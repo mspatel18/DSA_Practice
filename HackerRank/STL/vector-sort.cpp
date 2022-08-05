@@ -24,5 +24,7 @@ int main() {
     {
         cout << it4 << " ";
     }
+    //To find second largest element in vector
+    cout <<"second largest el = "<< v[v.size()-2] << " " << endl;
     return 0;
 }
