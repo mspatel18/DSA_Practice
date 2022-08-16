@@ -34,7 +34,6 @@ int main()
         Solution ob;
         string reciprocal = ob.reciprocalString(S);
         cout<< reciprocal <<endl;
-
     }
 
 	return 0;
