@@ -35,7 +35,6 @@ int main()
         string reciprocal = ob.reciprocalString(S);
         cout<< reciprocal <<endl;
     }
-
 	return 0;
 }
 // } Driver Code Ends
