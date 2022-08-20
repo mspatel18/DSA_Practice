@@ -12,7 +12,7 @@ class Solution {
          string ns;
        for(int i=0; i<S.length(); i++)
        {
-           ns = S[i] + ns;
+           ns = S[i] + ns;//it takes char and pushes them backwards
        }
        return ns;
     }
