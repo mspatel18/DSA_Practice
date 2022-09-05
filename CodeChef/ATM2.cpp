@@ -6,7 +6,6 @@ int main() {
 	int t,n,k;
 	cin>>t;
 	for (int i = 0; i < t; i++) {
-	    /* code */
 		cin>>n;
 		int a[n],ans[n];
 		cin>>k;
