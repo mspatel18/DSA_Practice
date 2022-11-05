@@ -16,3 +16,19 @@ public:
         return ans;
     }
 };
+int main() {
+    int n;
+    cin>>n;
+    vector<int>nums(n);
+    for(int i=0;i<n;i++) {
+        cin>>nums[i];
+    }
+    int target;
+    cin>>target;
+    Solution s;
+    vector<int>ans=s.twoSum(nums,target);
+    for(int i=0;i<ans.size();i++) {
+        cout<<ans[i]<<" ";
+    }
+    return 0;
+}
