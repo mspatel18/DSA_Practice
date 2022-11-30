@@ -1,4 +1,4 @@
 *.exe
-.cph
-.vscode
-.vscode-test
+*.cph
+*.vscode
+*.vscode-test
