@@ -1,0 +1,35 @@
+Practical 11
+create table Library_data (book_id int , book_name varchar(10), author_name varchar(10));
+Insert into Library_data (book_id , book_name , author_name) Values (1,'RDPD','RK');
+Insert into Library_data (book_id , book_name , author_name) Values(2,'AH','JC');
+Insert into Library_data (book_id , book_name , author_name)Values (3,'DOEPICS','AW');
+Insert into Library_data (book_id , book_name , author_name) Values(4,'AS','KC');
+Insert into Library_data (book_id , book_name , author_name) Values (5,'THINKGR','SA');
+-- Output:
+CREATE OR REPLACE PROCEDURE getbdata (
+b_book_id int )
+AUTHID DEFINER AS
+BEGIN
+DELETE FROM Library_data
+WHERE book_id = b_book_id;
+IF SQL%FOUND THEN
+DBMS_OUTPUT.PUT_LINE (
+'BOOK FOUND'
+);
+ELSIF SQL%NOTFOUND THEN
+DBMS_OUTPUT.PUT_LINE (
+'BOOK NOT FOUND'
+);
+END IF;
+END;
+Output:
+BEGIN
+getbdata(1);
+END;
+Output:
+select * from library_data;
+Output
+BEGIN
+getbdata(1);
+END;
+Output
